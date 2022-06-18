@@ -76,4 +76,37 @@ public class MainActivityTest {
         Espresso.pressBack(); //Back button
     }
 
+    @Test
+    public void UIunittest()
+
+    {   onView(withId(R.id.button_add)).perform(click()); //Click and outton to add a city to the list onView(withId(R.id.editText)).perform(ViewActions.typeText( "Tisent")); //Type a city name Espresso.pressBock();
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText( "Sylhet")); //Type a city name
+        Espresso.pressBack();
+        onView(withId(R.id.button_confirm)).perform(click()); //Confirm the city name and add to the list
+
+        onView(withId(R.id.button_add)).perform(click()); //Click add button to add a city to the list onView(withId(R.id.editText name)).perform(ViewActions.typeText(Type: "Chaka')); //Type a city nane Espresso.pressBock();
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText( "Dacca"));
+        Espresso.pressBack();
+        onView(withId(R.id.button_confirm)).perform(click()); //dacca the city name and add to the list
+
+        onView(withId(R.id.button_add)).perform(click()); //CLick son button to add a city to the list onView(withId(R.id.buit lestom)).perform(ViewActions.typeText("Whitins")); //Type a city nase
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText( "Chittagong"));
+        Espresso.pressBack();
+        onView(withId(R.id.button_confirm)).perform(click()); //chittagong to city nas and add to the list
+
+        onView(withId(R.id.button_add)).perform(click()); //Click add button to add a city to the list
+        onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Khulna")); //Type a city name
+        Espresso.pressBack();
+        onView(withId(R.id.button_confirm)).perform(click()); //khulna to city nas and add to the list
+        onView(withId(R.id.button_add)).perform(click());
+
+
+        onData(anything()).inAdapterView(withId(R.id.city_list)).atPosition(1).perform(click());
+        onView(withId(R.id.lay)).check(matches(isDisplayed())); // R.id.lay display hoise kina check
+        onView(withText("Dacca")).check(matches(isDisplayed())); //text add hoise kina
+        onView(withId(R.id.back)).perform(click());
+        onView(withId(R.id.mainlay)).check(matches(isDisplayed()));
+    }
+
+
 }
